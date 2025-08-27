@@ -1,0 +1,754 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Pengantar Web Mining &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'web_mining_pengantar';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Profile" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">My sample book</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Profile
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Pengantar Web Mining</strong></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fweb_mining_pengantar.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/web_mining_pengantar.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Pengantar Web Mining</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penambangan-web-dan-definisi"><strong>Penambangan Web dan Definisi</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tantangan-pemrosesan-web"><strong>Tantangan Pemrosesan Web</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taksonomi-web-mining"><strong>Taksonomi Web Mining</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penambangan-isi-web-content-mining"><strong>Penambangan Isi Web (Content Mining)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplikasi-text-mining"><strong>Aplikasi Text Mining</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikasi-dokumen-content-mining"><strong>Klasifikasi Dokumen (Content Mining)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-sentimen"><strong>Analisis Sentimen</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ekstraksi-informasi-information-extraction"><strong>Ekstraksi Informasi (Information Extraction)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-usage-mining"><strong>Web Usage Mining</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-web-usage-mining"><strong>Proses Web Usage Mining</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplikasi-web-usage-mining"><strong>Aplikasi Web Usage Mining</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penambangan-struktur-web-web-structure-mining"><strong>Penambangan Struktur Web (Web Structure Mining)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplikasi-web-structure-mining"><strong>Aplikasi Web Structure Mining</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-simpul-penting"><strong>Identifikasi Simpul Penting</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi"><strong>Implementasi</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#daftar-pustaka"><strong>Daftar Pustaka</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-plagiarisme"><strong>Cek Plagiarisme</strong></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pengantar-web-mining">
+<h1><strong>Pengantar Web Mining</strong><a class="headerlink" href="#pengantar-web-mining" title="Link to this heading">#</a></h1>
+<section id="penambangan-web-dan-definisi">
+<h2><strong>Penambangan Web dan Definisi</strong><a class="headerlink" href="#penambangan-web-dan-definisi" title="Link to this heading">#</a></h2>
+<p>Penambangan Web (Web Mining) adalah penerapan metode <em>data mining</em>, <em>machine learning</em>, dan <em>information retrieval</em> pada sumber daya berbasis web.<br />
+Tujuan utamanya adalah mengekstraksi pola tersembunyi, hubungan, serta pengetahuan baru dari data web yang sangat besar, beragam, dan dinamis.</p>
+<p>Web mining mencakup:</p>
+<ul class="simple">
+<li><p>Analisis konten halaman (teks, gambar, multimedia).</p></li>
+<li><p>Analisis struktur hyperlink antar halaman.</p></li>
+<li><p>Analisis perilaku pengguna dalam menjelajahi web.</p></li>
+</ul>
+<p>Manfaatnya antara lain: mendukung pengambilan keputusan, meningkatkan pencarian informasi, personalisasi layanan, serta memahami interaksi pengguna dengan dunia digital.</p>
+</section>
+<section id="tantangan-pemrosesan-web">
+<h2><strong>Tantangan Pemrosesan Web</strong><a class="headerlink" href="#tantangan-pemrosesan-web" title="Link to this heading">#</a></h2>
+<p>Karakteristik web menghadirkan sejumlah tantangan teknis maupun konseptual dalam pemrosesan data:</p>
+<ol class="arabic simple">
+<li><p><strong>Skala Masif</strong> → miliaran halaman dengan ukuran data yang terus bertambah.</p></li>
+<li><p><strong>Keanekaragaman Format</strong> → teks, gambar, video, audio, tabel, XML, JSON.</p></li>
+<li><p><strong>Kompleksitas</strong> → struktur link yang saling terhubung dan tak beraturan.</p></li>
+<li><p><strong>Dinamika Tinggi</strong> → halaman web cepat berubah atau hilang.</p></li>
+<li><p><strong>Non-Spesifik Domain</strong> → mencakup semua bidang pengetahuan.</p></li>
+<li><p><strong>Kualitas Data Bervariasi</strong> → seringkali terdapat duplikasi, data tidak valid, atau <em>spam</em>.</p></li>
+<li><p><strong>Masalah Semantik</strong> → makna kata/istilah bisa berbeda tergantung konteks.</p></li>
+</ol>
+<p>Tantangan ini membuat penambangan web memerlukan algoritma efisien, sistem terdistribusi, dan metode cerdas untuk mengatasi <em>noise</em> serta kompleksitas data.</p>
+</section>
+<section id="taksonomi-web-mining">
+<h2><strong>Taksonomi Web Mining</strong><a class="headerlink" href="#taksonomi-web-mining" title="Link to this heading">#</a></h2>
+<p>Web mining secara umum terbagi menjadi tiga kategori utama:</p>
+<ol class="arabic simple">
+<li><p><strong>Web Content Mining</strong></p>
+<ul class="simple">
+<li><p>Mengekstrak informasi dari isi halaman.</p></li>
+<li><p>Fokus pada teks, multimedia, maupun data terstruktur.</p></li>
+</ul>
+</li>
+<li><p><strong>Web Structure Mining</strong></p>
+<ul class="simple">
+<li><p>Analisis pola keterhubungan antar halaman melalui hyperlink.</p></li>
+<li><p>Dapat digunakan untuk menemukan halaman yang paling berpengaruh.</p></li>
+</ul>
+</li>
+<li><p><strong>Web Usage Mining</strong></p>
+<ul class="simple">
+<li><p>Menggali pola penggunaan dari data log akses server, cookies, dan clickstream.</p></li>
+<li><p>Memberikan wawasan tentang perilaku serta preferensi pengguna.</p></li>
+</ul>
+</li>
+</ol>
+<p>Taksonomi ini memudahkan peneliti memetakan fokus penelitian sesuai jenis data yang diolah.</p>
+</section>
+<section id="penambangan-isi-web-content-mining">
+<h2><strong>Penambangan Isi Web (Content Mining)</strong><a class="headerlink" href="#penambangan-isi-web-content-mining" title="Link to this heading">#</a></h2>
+<p>Penambangan isi web menekankan pada konten dari halaman yang dapat berupa:</p>
+<ul class="simple">
+<li><p><strong>Teks (Text Mining)</strong> → artikel, deskripsi, komentar.</p></li>
+<li><p><strong>Gambar (Image Mining)</strong> → foto, ilustrasi.</p></li>
+<li><p><strong>Audio (Audio Mining)</strong> → musik, rekaman suara.</p></li>
+<li><p><strong>Video (Video Mining)</strong> → klip, film, siaran langsung.</p></li>
+<li><p><strong>Data Terstruktur</strong> → tabel, daftar, metadata.</p></li>
+</ul>
+<p>Penerapan:</p>
+<ul class="simple">
+<li><p>Mesin pencari yang menampilkan hasil paling relevan.</p></li>
+<li><p>Analisis ulasan produk untuk menilai kepuasan pelanggan.</p></li>
+<li><p>Sistem rekomendasi konten multimedia.</p></li>
+</ul>
+</section>
+<section id="aplikasi-text-mining">
+<h2><strong>Aplikasi Text Mining</strong><a class="headerlink" href="#aplikasi-text-mining" title="Link to this heading">#</a></h2>
+<p>Text mining adalah salah satu bidang paling berkembang karena dominasi data berbentuk teks.<br />
+Aplikasi utama:</p>
+<ol class="arabic simple">
+<li><p><strong>Ekstraksi Informasi</strong> → mengidentifikasi fakta dari teks bebas.</p></li>
+<li><p><strong>Topic Modelling</strong> → menemukan topik tersembunyi dari kumpulan dokumen.</p></li>
+<li><p><strong>Peringkasan Dokumen</strong> → membuat ringkasan otomatis.</p></li>
+<li><p><strong>Klasifikasi Dokumen</strong> → sentimen analisis, opini publik, spam filtering.</p></li>
+<li><p><strong>Clustering Dokumen</strong> → sistem rekomendasi, grouping artikel serupa.</p></li>
+<li><p><strong>Ekstraksi Kata Kunci</strong> → menyoroti kata paling penting.</p></li>
+</ol>
+<p>Teknik yang digunakan meliputi NLP, <em>bag-of-words</em>, <em>word embeddings</em>, hingga <em>transformer-based models</em>.</p>
+</section>
+<section id="klasifikasi-dokumen-content-mining">
+<h2><strong>Klasifikasi Dokumen (Content Mining)</strong><a class="headerlink" href="#klasifikasi-dokumen-content-mining" title="Link to this heading">#</a></h2>
+<p><strong>Tujuan:</strong> menempatkan dokumen baru ke dalam kategori yang relevan.</p>
+<p><strong>Aplikasi:</strong></p>
+<ul class="simple">
+<li><p>Kategorisasi berita online.</p></li>
+<li><p>Pengelompokan produk di e-commerce.</p></li>
+<li><p>Deteksi email spam.</p></li>
+</ul>
+<p><strong>Metode populer:</strong></p>
+<ul class="simple">
+<li><p>Naive Bayes</p></li>
+<li><p>Support Vector Machines (SVM)</p></li>
+<li><p>Decision Tree</p></li>
+<li><p>Deep Learning (CNN, RNN, Transformers)</p></li>
+</ul>
+<p>Selain klasifikasi, terdapat <strong>Content Clustering</strong> → pengelompokan dokumen/gambar yang memiliki kesamaan konten.</p>
+</section>
+<section id="analisis-sentimen">
+<h2><strong>Analisis Sentimen</strong><a class="headerlink" href="#analisis-sentimen" title="Link to this heading">#</a></h2>
+<p>Analisis sentimen bertujuan mengenali sikap atau opini yang terkandung dalam teks.<br />
+Hasil analisis biasanya berupa nilai polaritas: <strong>Positif, Netral, atau Negatif</strong>.</p>
+<p><strong>Aplikasi umum:</strong></p>
+<ul class="simple">
+<li><p>Prediksi hasil pemilu dari opini di media sosial.</p></li>
+<li><p>Menilai respon publik terhadap kebijakan pemerintah.</p></li>
+<li><p>Ulasan produk untuk memahami kepuasan pelanggan.</p></li>
+<li><p>Analisis reputasi perusahaan/brand.</p></li>
+</ul>
+<p>Metode populer: <em>lexicon-based</em>, machine learning klasik, hingga deep learning berbasis LSTM dan BERT.</p>
+</section>
+<section id="ekstraksi-informasi-information-extraction">
+<h2><strong>Ekstraksi Informasi (Information Extraction)</strong><a class="headerlink" href="#ekstraksi-informasi-information-extraction" title="Link to this heading">#</a></h2>
+<p>Ekstraksi informasi adalah proses mengubah data tidak terstruktur menjadi data terstruktur.</p>
+<p>Komponen utama:</p>
+<ul class="simple">
+<li><p><strong>NER (Named Entity Recognition)</strong> → mendeteksi entitas (orang, lokasi, organisasi).</p></li>
+<li><p><strong>Relation Extraction</strong> → mengidentifikasi hubungan antar entitas.</p></li>
+<li><p><strong>Event Extraction</strong> → menemukan peristiwa tertentu.</p></li>
+</ul>
+<p>Contoh: dari teks berita “Presiden membuka konferensi di Jakarta” dapat diekstrak → {Presiden=entitas, Konferensi=acara, Jakarta=lokasi}.</p>
+</section>
+<section id="web-usage-mining">
+<h2><strong>Web Usage Mining</strong><a class="headerlink" href="#web-usage-mining" title="Link to this heading">#</a></h2>
+<p>Fokus utama pada perilaku pengguna ketika berinteraksi dengan web.</p>
+<p><strong>Sumber Data:</strong></p>
+<ul class="simple">
+<li><p>Log akses server (jumlah kunjungan, waktu akses).</p></li>
+<li><p>Log agen pengguna (browser, sistem operasi).</p></li>
+<li><p>Cookies (preferensi pengguna).</p></li>
+<li><p>Clickstream (urutan klik navigasi pengguna).</p></li>
+</ul>
+<p><strong>Manfaat:</strong></p>
+<ul class="simple">
+<li><p>Mengetahui pola kunjungan halaman.</p></li>
+<li><p>Memahami kebiasaan pengguna.</p></li>
+<li><p>Dasar untuk personalisasi layanan.</p></li>
+</ul>
+</section>
+<section id="proses-web-usage-mining">
+<h2><strong>Proses Web Usage Mining</strong><a class="headerlink" href="#proses-web-usage-mining" title="Link to this heading">#</a></h2>
+<p>Tahapan utama:</p>
+<ol class="arabic simple">
+<li><p><strong>Data Collection</strong> → mengumpulkan data dari log, cookies, atau proxy server.</p></li>
+<li><p><strong>Preprocessing</strong> → pembersihan noise, identifikasi pengguna unik.</p></li>
+<li><p><strong>Transformation</strong> → mengubah data mentah menjadi format siap analisis.</p></li>
+<li><p><strong>Pattern Discovery</strong> → penemuan pola dengan algoritma clustering, asosiasi, sequential pattern.</p></li>
+<li><p><strong>Pattern Analysis</strong> → interpretasi hasil, visualisasi, serta penerapan bisnis.</p></li>
+</ol>
+<p>Hasil akhirnya berupa wawasan mendalam terkait perilaku pengguna.</p>
+</section>
+<section id="aplikasi-web-usage-mining">
+<h2><strong>Aplikasi Web Usage Mining</strong><a class="headerlink" href="#aplikasi-web-usage-mining" title="Link to this heading">#</a></h2>
+<p>Beberapa aplikasi nyata:</p>
+<ul class="simple">
+<li><p><strong>Product Recommendation</strong> → rekomendasi produk e-commerce.</p></li>
+<li><p><strong>Personalized Search</strong> → hasil pencarian berbeda sesuai profil pengguna.</p></li>
+<li><p><strong>Customer Profiling</strong> → segmentasi pengguna berdasarkan perilaku.</p></li>
+<li><p><strong>Churn Prediction</strong> → memprediksi pelanggan yang akan berhenti.</p></li>
+<li><p><strong>Fraud Detection</strong> → mendeteksi pola penggunaan abnormal.</p></li>
+</ul>
+</section>
+<section id="penambangan-struktur-web-web-structure-mining">
+<h2><strong>Penambangan Struktur Web (Web Structure Mining)</strong><a class="headerlink" href="#penambangan-struktur-web-web-structure-mining" title="Link to this heading">#</a></h2>
+<p>Web Structure Mining menitikberatkan pada pola hubungan antar halaman melalui hyperlink.</p>
+<p>Fokus analisis:</p>
+<ul class="simple">
+<li><p>Struktur graf dari web (node = halaman, edge = hyperlink).</p></li>
+<li><p>Hubungan sosial antar pengguna di jaringan.</p></li>
+<li><p>Analisis komunitas online seperti forum, email, media sosial.</p></li>
+</ul>
+<p>Contoh penerapan: algoritma PageRank yang menilai pentingnya sebuah halaman berdasarkan jumlah dan kualitas link yang menunjuk ke halaman tersebut.</p>
+</section>
+<section id="aplikasi-web-structure-mining">
+<h2><strong>Aplikasi Web Structure Mining</strong><a class="headerlink" href="#aplikasi-web-structure-mining" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Web Graph Analysis</strong> → merepresentasikan halaman sebagai simpul dan link sebagai sisi.</p></li>
+<li><p><strong>Authority and Hub Detection</strong> → menentukan halaman yang paling berpengaruh.</p></li>
+<li><p><strong>Community Detection</strong> → menemukan kelompok pengguna yang saling terhubung erat.</p></li>
+<li><p><strong>Social Network Analysis</strong> → memahami interaksi antar individu di platform digital.</p></li>
+</ol>
+</section>
+<section id="identifikasi-simpul-penting">
+<h2><strong>Identifikasi Simpul Penting</strong><a class="headerlink" href="#identifikasi-simpul-penting" title="Link to this heading">#</a></h2>
+<p>Dalam analisis graf, simpul penting bisa diukur dengan:</p>
+<ul class="simple">
+<li><p><strong>Degree Centrality</strong> → jumlah hubungan langsung.</p></li>
+<li><p><strong>Betweenness Centrality</strong> → peran sebagai penghubung antar kelompok.</p></li>
+<li><p><strong>Closeness Centrality</strong> → kedekatan ke semua simpul lain.</p></li>
+<li><p><strong>Eigenvector Centrality / PageRank</strong> → simpul penting jika dihubungkan oleh simpul penting lainnya.</p></li>
+</ul>
+<p>Penerapan: mencari influencer di media sosial, halaman populer di mesin pencari, atau simpul kunci dalam jaringan komunikasi.</p>
+</section>
+<section id="implementasi">
+<h2><strong>Implementasi</strong><a class="headerlink" href="#implementasi" title="Link to this heading">#</a></h2>
+<p>Beberapa implementasi nyata:</p>
+<ul class="simple">
+<li><p><strong>Google Search</strong> → algoritma PageRank untuk peringkat hasil pencarian.</p></li>
+<li><p><strong>Twitter/Instagram</strong> → rekomendasi akun influencer berdasarkan jaringan sosial.</p></li>
+<li><p><strong>Analisis Jaringan Sosial</strong> → mendeteksi pemimpin komunitas atau penyebar hoaks.</p></li>
+<li><p><strong>E-commerce</strong> → sistem rekomendasi produk berdasarkan riwayat klik dan pembelian.</p></li>
+</ul>
+<p>Python mendukung banyak library untuk web mining, seperti <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code> (web scraping), <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> (machine learning), <code class="docutils literal notranslate"><span class="pre">networkx</span></code> (analisis graf), dan <code class="docutils literal notranslate"><span class="pre">NLTK/transformers</span></code> (pemrosesan teks).</p>
+</section>
+<section id="daftar-pustaka">
+<h2><strong>Daftar Pustaka</strong><a class="headerlink" href="#daftar-pustaka" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Kosala, R., &amp; Blockeel, H. (2000). Web mining research: A survey. <em>ACM SIGKDD Explorations Newsletter, 2</em>(1), 1–15. <a class="reference external" href="https://doi.org/10.1145/360402.360406">https://doi.org/10.1145/360402.360406</a></p></li>
+<li><p>Pengantar Web Mining. (2020). Modul Kuliah Sistem Informasi.</p></li>
+<li><p>Han, J., Kamber, M., &amp; Pei, J. (2012). <em>Data Mining: Concepts and Techniques</em> (3rd ed.). Morgan Kaufmann.</p></li>
+<li><p>Liu, B. (2011). <em>Web Data Mining: Exploring Hyperlinks, Contents, and Usage Data</em>. Springer.</p></li>
+<li><p>Aggarwal, C. C. (2015). <em>Data Mining: The Textbook</em>. Springer.</p></li>
+</ul>
+<section id="cek-plagiarisme">
+<h3><strong>Cek Plagiarisme</strong><a class="headerlink" href="#cek-plagiarisme" title="Link to this heading">#</a></h3>
+<p><img alt="image.png" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABu8AAACkCAYAAACXWrNVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAF+MSURBVHhe7d19XFRl/v/xlyA3EQgEGsJqohXaDaZJbpCukgVhZVliqbttZm1l5V2Zv03bNq01E7MbtW+ZZanlTZaWpGW4m0Eppmmbypbg4oKkENAQwiDw+2NmYDgMN4OgQ76fj8d5POC6rjNzZs51zlznfM51XR2qq6urEREREREREREREREREZEzzs2YICIiIiIiIiIiIiIiIiJnhoJ3IiIiIiIiIiIiIiIiIi5CwTsRERERERERERERERERF6HgnYiIiIiIiIiIiIiIiIiLUPBORERERERERERERERExEUoeCciIiIiIiIiIiIiIiLiIhS8ExEREREREREREREREXERCt6JiIiIiIiIiIiIiIiIuAgF70RERERERERERERERERchIJ3IiIiIiIiIiIiIiIiIi5CwTsRERERERERERERERERF9Ghurq62ph4qsrKyvjll1/49ddfKSsrw2w2U1lZaSwmIiIiIiIiIiIiIiIi4rLc3d3x9PTE29ubc889l06dOuHt7W0s1qpaNXhXUFBAQUEB5eXl+Pv74+3tjbu7O5WVlVRVVVFdXU0rvp2IiIiIiIiIiIiIiIhIm3B3d6dDhw64ublRXV1NWVkZRUVFeHl5ERQURFBQkHGVVtEqwbuioiKOHj2Kp6cn/v7+uLm5UVZWZiwmIiIiIiIiIiIiIiIi0i516NABLy8vqqqqKC4uxmw207VrVwICAoxFT8kpB++ys7MpKSkhJCSEqqoqzGazsYiIiIiIiIiIiIiIiIjIb4aXlxcdOnQgLy8PX19funfvbizSYi0O3lVUVJCVlYW3tzf+/v6UlpZqSEwRERERERERERERERE5K3To0IFzzz2X4uJiTpw4QXh4OB4eHsZiTmtR8K6iooIff/yRwMBAPD09NUSmiIiIiIiIiIiIiIiInJW8vb0pLy+nqKiICy+88JQDeG7GhObIysoiMDAQDw8PBe5ERERERERERERERETkrFVWVoanpyeBgYFkZWUZs53mdM+77OxsAHx9fRW4ExEREREREREREREREbH2wPv111+prq4+pTnwnOp5V1RURElJCf7+/grc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pS1tfazTs1sUN0TajQnqHsGDK5cx/oq6331Q9GSWvf1mzVOcIu2KezgjFm1h49xxRBnPETaeQUQMHse4Ac6MketJ/JN2x4v1WtUUEMPkN19lyYRbHF7vRkxcybIJkXXzgmKY/OZK3rQ9+W+k62IR5wRFMS4hAj9HN0+7RDFu7kY+eiLG4THqWsJ5cOkc4m3nLpPl2Df3GMG81UuYM7L1Z71rsm1h02s046w3nSGUcaMaOH+JnAnO/m4622b2i+fFZLtj0yr81nmsWzeHWxo7uYSO4tWP1jI92vDD3WME81bPIcbu0sMzbpZdm8G6TaYgYh5ZxqsvjXf4Pn6D57DxzcnEOriW8ry4Z82QnA1yj+DBlyZbe/9Z579zNDKA2KkdOhM8Sby5ufPJhZJorXdBxt+rLrFMXrqxZdeiztZ/aTMdqqurq42JRrt37yYkJMSYfEaYTQWYzICnH0F2Nx6ax4ypwGTp7uvuR1CAs+uLiIiISLtSacZUZG3/4YlfkF+TN9pOqb1Z837Ne6/TxVxUgKkSPM8Jws/Rk5dmk3UYwMa3u+a7wRO/AD88jReJ9kpNFJwwN/yeIu1VzfFC846F5rAeL05dp9rON86sA7ouFnFS7W9fI7+j7cAptW9aosm2RQFr7o5j3ndA6HjWbnzwzIxUINIk5383nWkz28p6+gXZP2PXPLb2Q1PHtf01ShPbU4ft9Wnh9slp1eQ1X4s4X//Fsby8PPr3729MblS7C96JiIiIiIiIiIhIO7Z/MTf/aRm5QORjW1g2Wt04RETkt6slwbt2MmymiIiIiIiIiIiItFdmUwEFBQUUHNrA9ImWwB2e8dxzkwJ3IiIiRgreiYiIiIiIiIiISJtKfz6OuLg44kbPJsUE4Ef83MeJabXh3URERH47FLwTERERERERERGRttWx9k/Pi+OZ/uZG5gz2sy8hIiIiVprzTkRERERERERERERERKQNaM47ERERERERERERERERkXZMwTsRERERERERERERERERF6HgnYiIiIiIiIiIiIiIiIiLUPBORERERERERERERERExEUoeCciIiIiIiIiIiIiIiLiIhS8ExEREREREREREREREXERCt6JiIiIiIiIiIiIiIiIuAgF70RERERERERERERERERchIJ3IiIiIiIiIiIiIiIiIi5CwTsRERERERERERERERERF6HgnYiIiIiIiIiIiIiIiIiL6FBdXV1tTDTavXs3/fv3NyaLiIiIiIiIiIiIiIiISANaEmNTzzsRERERERERERERERERF6HgnYiIiIiIiIiIiIiIiIiLUPBORERERERERERERERExEUoeCciIiIiIiIiIiIiIiLiIhS8ExEREREREREREREREXERCt6JiIiIiIiIiIiIiIiIuAgF70RERERERERERERERERchIJ3IiIiIiIiIiIiIiIiIi5CwTsRERERERERERERERERF6HgnYiIiIiIiIiIiIiIiIiLUPBORERERERERERERERExEUoeCciIiIiIiIiIiIiIiLiIhS8ExEREREREREREREREXERCt6JiIiIiIiIiIiIiIiIuAgF70RERERERERERERERERchIJ3IiIiIiIiIiIiIiIiIi5CwTsRERERERERERERERERF6HgnYiIiIiIiIiIiIiIiIiLUPBORERERERERERERERExEUoeCciIiIiIiIiIiIiIiLiIhS8ExERERFpL0pN5Ofnk59votyYd7pVlmPKzyc/Px9TMzemvMhavtSY40ALXl9ERERERETkt6BDdXV1tTHRaPfu3fTv39+YLCIiIiLSvpVuZWrMVLZW9uWvn73DHecbC7iCcnK+fI2k599ja5apNtk9mKsm/J0X7h+En7stcTszIieSXFuqAQks2jeXQcbkZijP3s5rLyTx3j8zMVXWpgdfdS9/n/8wgwLsS1uYvkzinseXc9Bu84P/MI0Xnr2Lvn72JZ1//Zy3ErlhwcG6iTV6M+3jNdzV3ZguIiIiIiIicnq0JMam4J2IiIiInLXKP5lK1ONbAeg99RPW/DnMWOQMK2fn87cw4Z0c8OvNsDEjSbgoGIr28t7ry9n5EwTftohP/jYILwAOsv7v77HP+DI1/seO93eS43cH76T+lb7G7CaU70zilr8sJwc/eg+5g5E39CGYfPaueY3lO/MheCSLPn6KQT5263z5FDc8uJ784L7cdf9d9A2A/PRXSFqdSfml0/hwxV30tAYfW/L6luBdDr2vv45LDIFACOPaifcyKNiYLiIiIiIiInJ6tCTGpuCdiIiIiJyl8nnvrlieNY1kpN961hfcy5qPH6a3sdiZZtrKy2935s/397XrYQdUHuTlEYm8nn0VT6UsZWQzAlTln04l6tGthP1lDZ9MbMkn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KV8WQ+8buaWR4FZFJVBpxtb5LjvrKBVA8d4PWP7m8vrLum8oBsj5kaMVQOF3fPC2g3JvruGbwrrv1Zouv7o/HkD3KwfSUKdCEREREREREXFdHaqrq6uNiUa7d++mf//+xmQRERERkd+sipJiSj388fcy5oiIiIiIiIiINE9LYmzqeSciIiIi4oCHrwJ3IiIiIiIiInL6NSt45+7uTmVlpTFZRERERERERERERERERByorKzE3d3dmNykZgXvPD09MZvNxmQRERERERERERERERERccBsNuPp6WlMblKzgnfe3t6cOHHCmCwiIiIiIiIiIiIiIiIiDpw4cQJvb29jcpOaFbw799xzKSkpMSaLiIiIiIiIiIiIiIiIiAMlJSWce+65xuQmNSt416lTJ4qLi43JIiIiIiIiIiIiIiIiIuJAcXExnTp1MiY3qVnBO29vb7y8vBTAExEREREREREREREREWlCcXExXl5ebTdsJkBQUBDHjx83JouIiIiIiIiIiIiIiIiInePHjxMUFGRMbhangncVFRXqfSciIiIiIiIiIiIiIiLSgOLiYioqKto+eAfQtWtXcnJyjMkiIiIiIiIiIiIiIiIiAuTk5NC1a1djcrM5FbwLCAjA19eX7OxsY5aIiIiIiIiIiIiIiIjIWS07OxtfX18CAgKMWc3mVPAOoHv37pSVlZGXl2fMEhERERERERERERERETkr5eXlUVZWRvfu3Y1ZTnE6eAcQHh5OYWGhAngiIiIiIiIiIiIiIiJy1svLy6OwsJDw8HBjltM6VFdXVxsTm6OiooKsrCy8vb1POYIoIiIiIiIiIiIiIiIi0h5lZ2dTVlZGeHg4Hh4exmyntTh4Z5OdnU1JSQlhYWH4+/sbs0VERERERERERERERER+c4qLi8nJycHX17dVO7qdcvAOoKioiKNHj+Lh4UHnzp0VxBMREREREREREREREZHfpOLiYo4fP05FRQVdu3YlICDAWOSUtErwzqagoICCggLKy8vx9/fH19eXc845B09PT9zd3Y3FRURERERERERERERERFxWZWUlZrOZEydOUFJSQnFxMV5eXgQFBREUFGQs3ipaNXhnU1ZWxi+//MKvv/5KWVkZZrOZyspKYzERERERERERERERERERl+Xu7o6npyfe3t6ce+65dOrUCW9vb2OxVtUmwTsRERERERERERERERERcZ6bMUFEREREREREREREREREzgwF70RERERERERERERERERchIJ3IiIiIiIiIiIiIiIiIi5CwTsRERERERERERERERERF6HgnYiIiIiIiIiIiIiIiIiLUPBORERERERERERERERExEUoeCciIiIiIiIiIiIiIiLiIhS8ExEREREREREREREREXERCt6JiIiIiIiIiIiIiIiIuAgF70RERERERERERERERERchIJ3IiIiIiIiIiIiIiIiIi5CwTsRERERERERERERERERF6HgnYiIiIiIiIiIiIiIiIiLUPBORERERERERERERERExEX8f4wE2gru5AJwAAAAAElFTkSuQmCC" /></p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Profile</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penambangan-web-dan-definisi"><strong>Penambangan Web dan Definisi</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tantangan-pemrosesan-web"><strong>Tantangan Pemrosesan Web</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#taksonomi-web-mining"><strong>Taksonomi Web Mining</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penambangan-isi-web-content-mining"><strong>Penambangan Isi Web (Content Mining)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplikasi-text-mining"><strong>Aplikasi Text Mining</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#klasifikasi-dokumen-content-mining"><strong>Klasifikasi Dokumen (Content Mining)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analisis-sentimen"><strong>Analisis Sentimen</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ekstraksi-informasi-information-extraction"><strong>Ekstraksi Informasi (Information Extraction)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-usage-mining"><strong>Web Usage Mining</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#proses-web-usage-mining"><strong>Proses Web Usage Mining</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplikasi-web-usage-mining"><strong>Aplikasi Web Usage Mining</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penambangan-struktur-web-web-structure-mining"><strong>Penambangan Struktur Web (Web Structure Mining)</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aplikasi-web-structure-mining"><strong>Aplikasi Web Structure Mining</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identifikasi-simpul-penting"><strong>Identifikasi Simpul Penting</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementasi"><strong>Implementasi</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#daftar-pustaka"><strong>Daftar Pustaka</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cek-plagiarisme"><strong>Cek Plagiarisme</strong></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Yudha Caesar Maulana
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
